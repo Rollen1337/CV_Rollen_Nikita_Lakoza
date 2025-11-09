@@ -92,24 +92,26 @@ function App() {
               <ul className="contact-list">
                 {contact.items.map((item) => {
                   const isEmail = item.href.startsWith('mailto:')
-                  const linkText = item.value ?? item.label
 
                   return (
                     <li key={item.label} className="contact-list__item">
-                      <span className="contact-list__icon material-symbols-rounded" aria-hidden="true">
-                        {item.icon}
-                      </span>
-                      <div className="contact-list__content">
-                        <span className="contact-list__label">{item.label}</span>
-                        <a
-                          className="contact-list__link"
-                          href={item.href}
-                          target={isEmail ? undefined : '_blank'}
-                          rel={isEmail ? undefined : 'noopener noreferrer'}
-                        >
-                          {linkText}
-                        </a>
-                      </div>
+                      <a
+                        className="contact-card"
+                        href={item.href}
+                        target={isEmail ? undefined : '_blank'}
+                        rel={isEmail ? undefined : 'noopener noreferrer'}
+                      >
+                        <span className="contact-card__icon material-symbols-rounded" aria-hidden="true">
+                          {item.icon}
+                        </span>
+                        <div className="contact-card__content">
+                          <span className="contact-card__label">{item.label}</span>
+                          <span className="contact-card__value">{item.value}</span>
+                        </div>
+                        <span className="contact-card__arrow material-symbols-rounded" aria-hidden="true">
+                          north_east
+                        </span>
+                      </a>
                     </li>
                   )
                 })}

@@ -50,18 +50,18 @@ const ru: Translation = {
         },
         {
           label: 'LinkedIn',
-          value: 'Никита Лакоза',
+          value: 'Открыть профиль',
           href: 'https://www.linkedin.com/in/nikita-lakoza-98a339275',
           icon: 'handshake',
         },
         {
-          label: 'Liquipedia',
-          value: 'Профиль по Counter-Strike',
+          label: 'Liquipedia (Counter-Strike)',
+          value: 'Профиль по CS2',
           href: 'https://liquipedia.net/counterstrike/Rollen',
           icon: 'travel_explore',
         },
         {
-          label: 'Liquipedia',
+          label: 'Liquipedia (Dota 2)',
           value: 'Профиль по Dota 2',
           href: 'https://liquipedia.net/dota2/Rollen',
           icon: 'travel_explore',
@@ -253,7 +253,7 @@ const ru: Translation = {
         },
         {
           href: 'https://fissure.pro',
-          src: '/logos/fissure.png',
+          src: '/logos/fissure.svg',
           alt: 'FISSURE.pro logo',
         },
       ],
