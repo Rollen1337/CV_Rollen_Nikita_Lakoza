@@ -12,6 +12,7 @@ type PortfolioItem = {
   orientation?: 'landscape' | 'portrait'
   allow?: string
   allowFullScreen?: boolean
+  sourceType?: string
 }
 
 interface PortfolioCarouselProps {
@@ -106,9 +107,11 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
                         className="portfolio-card__video"
                         controls
                         preload="metadata"
+                        playsInline
+                        controlsList="nodownload noremoteplayback"
                         poster={item.poster}
                       >
-                        <source src={item.src} />
+                        <source src={item.src} type={item.sourceType} />
                       </video>
                     ) : item.mediaType === 'iframe' ? (
                       <div className="portfolio-card__embed-wrapper">

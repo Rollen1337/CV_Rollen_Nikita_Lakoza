@@ -232,11 +232,10 @@ const en = {
         {
           title: 'FISSURE vertical highlight reel',
           description: 'Vertical reel captured from the observer desk during a FISSURE show',
-          mediaType: 'iframe',
-          src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+          mediaType: 'video',
+          src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
+          sourceType: 'video/mp4',
           orientation: 'portrait',
-          allow: 'autoplay',
-          allowFullScreen: true,
         },
         {
           title: 'The team that lights up the stage',

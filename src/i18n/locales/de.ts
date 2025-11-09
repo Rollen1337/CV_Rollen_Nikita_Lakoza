@@ -233,11 +233,10 @@ const de: Translation = {
         {
           title: 'Vertikales FISSURE-Highlight',
           description: 'Vertikaler Reel vom Observer-Platz während einer FISSURE-Show',
-          mediaType: 'iframe',
-          src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+          mediaType: 'video',
+          src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
+          sourceType: 'video/mp4',
           orientation: 'portrait',
-          allow: 'autoplay',
-          allowFullScreen: true,
         },
         {
           title: 'Das Team, das die Bühne erhellt',
