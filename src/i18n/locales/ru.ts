@@ -55,13 +55,13 @@ const ru: Translation = {
           icon: 'handshake',
         },
         {
-          label: 'Liquipedia (Counter-Strike)',
+          label: 'Liquipedia',
           value: 'Профиль по Counter-Strike',
           href: 'https://liquipedia.net/counterstrike/Rollen',
           icon: 'travel_explore',
         },
         {
-          label: 'Liquipedia (Dota 2)',
+          label: 'Liquipedia',
           value: 'Профиль по Dota 2',
           href: 'https://liquipedia.net/dota2/Rollen',
           icon: 'travel_explore',
