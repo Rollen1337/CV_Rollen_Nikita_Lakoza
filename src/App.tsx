@@ -8,21 +8,7 @@ import { useI18n } from './i18n'
 function App() {
   const { translation } = useI18n()
   const { cv, layout } = translation
-  const {
-    metadata,
-    contact,
-    summary,
-    experience,
-    events,
-    education,
-    skills,
-    tools,
-    portfolio,
-    logos,
-    links,
-    shortVersion,
-    footer,
-  } = cv
+  const { metadata, contact, summary, experience, events, education, skills, tools, portfolio, logos, footer } = cv
 
   return (
     <div className="app">
@@ -304,25 +290,6 @@ function App() {
                   </li>
                 ))}
               </ul>
-            </Section>
-          ) : null}
-          {links ? (
-            <Section id="links" title={links.title} icon="link">
-              <ul className="links-list">
-                {links.items.map((item) => (
-                  <li key={item.label} className="links-list__item">
-                    <span className="links-list__label">{item.label}</span>
-                    <a className="links-list__link" href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.value}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </Section>
-          ) : null}
-          {shortVersion ? (
-            <Section id="short-version" title={shortVersion.title} icon="summarize">
-              <div className="short-version">{shortVersion.description}</div>
             </Section>
           ) : null}
         </main>

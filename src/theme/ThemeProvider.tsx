@@ -1,18 +1,8 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
+import { ThemeContext, type ResolvedTheme, type ThemeMode } from './context'
 
 const STORAGE_KEY = 'cv-template:theme'
-
-type ThemeMode = 'system' | 'light' | 'dark'
-type ResolvedTheme = 'light' | 'dark'
-
-type ThemeContextValue = {
-  mode: ThemeMode
-  resolvedTheme: ResolvedTheme
-  setMode: (mode: ThemeMode) => void
-}
-
-const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 const getInitialMode = (): ThemeMode => {
   if (typeof window === 'undefined') {
@@ -102,15 +92,5 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-}
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext)
-
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider')
-  }
-
-  return context
 }
 
