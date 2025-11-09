@@ -109,7 +109,7 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
             {isExpanded ? toggle.collapse : toggle.expand}
           </span>
           <span className="portfolio-carousel__toggle-icon material-symbols-rounded" aria-hidden="true">
-            {isExpanded ? 'expand_less' : 'expand_more'}
+            expand_more
           </span>
         </button>
       ) : null}

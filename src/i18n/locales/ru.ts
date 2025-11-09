@@ -210,9 +210,8 @@ const ru: Translation = {
         },
         {
           title: 'Продакшен',
-          description:
-            'Понимаю, по какому «проводу» идёт сигнал, поэтому быстро нахожу и решаю технические проблемы',
           items: [
+            'Понимаю, по какому «проводу» идёт сигнал, поэтому быстро нахожу и решаю технические проблемы',
             'Работаю с коаксиальными и SDI кабелями, ATEM и BMD-конвертерами',
             'Контролирую сигнал и FPS, отслеживаю падения и несоответствия',
             'Оперативно заменяю кабели, конвертеры или даже ПК и обновляю драйверы',
@@ -282,24 +281,24 @@ const ru: Translation = {
       title: 'Партнёры и турниры',
       items: [
         {
+          href: 'https://youtu.be/YVuiXKjDKwc?si=gtHzvoS68YClZD4D',
+          src: '/logos/fpg1.png',
+          alt: 'Fissure Playground 1 logo',
+        },
+        {
+          href: 'https://youtu.be/wGEbsuWClbA?si=y3RBo-w44JIxzYhm',
+          src: '/logos/fpg2.png',
+          alt: 'Fissure Playground 2 logo',
+        },
+        {
+          href: 'https://www.youtube.com/live/dOaZ4mjJmG4?si=3F_USY0zgp-JI9Xt',
+          src: '/logos/bbd2024.png',
+          alt: 'BetBoom Dacha Dubai 2024 logo',
+        },
+        {
           href: 'https://fissure.pro',
           src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=FISSURE',
-          alt: 'Логотип FISSURE.pro',
-        },
-        {
-          href: 'https://betboomdacha.com',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=BetBoom',
-          alt: 'Логотип BetBoom Dacha',
-        },
-        {
-          href: 'https://www.dota2.com',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=Dota+2',
-          alt: 'Логотип Dota 2',
-        },
-        {
-          href: 'https://www.counter-strike.net/cs2',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=CS2',
-          alt: 'Логотип Counter-Strike 2',
+          alt: 'FISSURE.pro logo',
         },
       ],
     },

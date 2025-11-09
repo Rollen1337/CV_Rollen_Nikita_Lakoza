@@ -207,9 +207,8 @@ const en = {
         },
         {
           title: 'Production pipeline',
-          description:
-            'I do more than show the game — I understand every “wire” that carries the signal, which helps me fix issues fast',
           items: [
+            'I do more than show the game — I understand every “wire” that carries the signal, which helps me fix issues fast',
             'Work with coaxial and SDI cabling, ATEM switchers, and BMD converters',
             'Monitor signal and frame rate, diagnosing drops and mismatches on the fly',
             'Replace cables, converters, or even the PC when needed and keep drivers updated',
@@ -279,24 +278,24 @@ const en = {
       title: 'Partners & tournaments',
       items: [
         {
+          href: 'https://youtu.be/YVuiXKjDKwc?si=gtHzvoS68YClZD4D',
+          src: '/logos/fpg1.png',
+          alt: 'Fissure Playground 1 logo',
+        },
+        {
+          href: 'https://youtu.be/wGEbsuWClbA?si=y3RBo-w44JIxzYhm',
+          src: '/logos/fpg2.png',
+          alt: 'Fissure Playground 2 logo',
+        },
+        {
+          href: 'https://www.youtube.com/live/dOaZ4mjJmG4?si=3F_USY0zgp-JI9Xt',
+          src: '/logos/bbd2024.png',
+          alt: 'BetBoom Dacha Dubai 2024 logo',
+        },
+        {
           href: 'https://fissure.pro',
           src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=FISSURE',
           alt: 'FISSURE.pro logo',
-        },
-        {
-          href: 'https://betboomdacha.com',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=BetBoom',
-          alt: 'BetBoom Dacha logo',
-        },
-        {
-          href: 'https://www.dota2.com',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=Dota+2',
-          alt: 'Dota 2 logo',
-        },
-        {
-          href: 'https://www.counter-strike.net/cs2',
-          src: 'https://dummyimage.com/160x60/1a1a1a/ffffff&text=CS2',
-          alt: 'Counter-Strike 2 logo',
         },
       ],
     },

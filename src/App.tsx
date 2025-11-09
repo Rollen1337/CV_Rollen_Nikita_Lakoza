@@ -29,7 +29,7 @@ function App() {
             <div className="page-hero__profile">
               <figure className="page-hero__media">
                 <img
-                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=320&q=80"
+                  src="/profile.jpg"
                   alt={metadata.name}
                 />
               </figure>
