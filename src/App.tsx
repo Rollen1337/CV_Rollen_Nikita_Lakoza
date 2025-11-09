@@ -8,21 +8,7 @@ import { useI18n } from './i18n'
 function App() {
   const { translation } = useI18n()
   const { cv, layout } = translation
-  const {
-    metadata,
-    contact,
-    summary,
-    experience,
-    events,
-    education,
-    skills,
-    tools,
-    portfolio,
-    logos,
-    links,
-    shortVersion,
-    footer,
-  } = cv
+  const { metadata, contact, summary, experience, events, education, skills, tools, portfolio, logos, footer } = cv
 
   return (
     <div className="app">
@@ -43,7 +29,7 @@ function App() {
             <div className="page-hero__profile">
               <figure className="page-hero__media">
                 <img
-                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=320&q=80"
+                  src="/profile.jpg"
                   alt={metadata.name}
                 />
               </figure>
@@ -181,6 +167,11 @@ function App() {
               ))}
             </div>
           </Section>
+          {portfolio ? (
+            <Section id="portfolio" title={portfolio.title} icon="view_carousel">
+              <PortfolioCarousel items={portfolio.items} toggle={portfolio.toggle} />
+            </Section>
+          ) : null}
           {events ? (
             <Section id="events" title={events.title} icon="emoji_events">
               {events.intro ? <p className="section-intro">{events.intro}</p> : null}
@@ -252,11 +243,23 @@ function App() {
             </ul>
           </Section>
           <Section id="skills" title={skills.title} icon="psychology">
+            {skills.note ? (
+              <figure className="skills-lead">
+                <span className="skills-lead__icon material-symbols-rounded" aria-hidden="true">
+                  format_quote
+                </span>
+                <blockquote className="skills-lead__text">{skills.note}</blockquote>
+              </figure>
+            ) : null}
             <div className="skills-grid">
               {skills.groups.map((group) => (
                 <section key={group.title} aria-label={group.title} className="skills-grid__group">
                   <h3 className="skills-grid__title">{group.title}</h3>
-                  {group.description ? <p className="skills-grid__description">{group.description}</p> : null}
+                  {group.description ? (
+                    <div className="skills-grid__callout">
+                      <p>{group.description}</p>
+                    </div>
+                  ) : null}
                   <ul className="skills-grid__list">
                     {group.items.map((skill) => (
                       <li key={skill}>{skill}</li>
@@ -265,7 +268,6 @@ function App() {
                 </section>
               ))}
             </div>
-            {skills.note ? <p className="section-note">{skills.note}</p> : null}
           </Section>
           {tools ? (
             <Section id="tools" title={tools.title} icon="build">
@@ -281,11 +283,6 @@ function App() {
                   </section>
                 ))}
               </div>
-            </Section>
-          ) : null}
-          {portfolio ? (
-            <Section id="portfolio" title={portfolio.title} icon="view_carousel">
-              <PortfolioCarousel items={portfolio.items} toggle={portfolio.toggle} />
             </Section>
           ) : null}
           {logos ? (
@@ -304,25 +301,6 @@ function App() {
                   </li>
                 ))}
               </ul>
-            </Section>
-          ) : null}
-          {links ? (
-            <Section id="links" title={links.title} icon="link">
-              <ul className="links-list">
-                {links.items.map((item) => (
-                  <li key={item.label} className="links-list__item">
-                    <span className="links-list__label">{item.label}</span>
-                    <a className="links-list__link" href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.value}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </Section>
-          ) : null}
-          {shortVersion ? (
-            <Section id="short-version" title={shortVersion.title} icon="summarize">
-              <div className="short-version">{shortVersion.description}</div>
             </Section>
           ) : null}
         </main>
