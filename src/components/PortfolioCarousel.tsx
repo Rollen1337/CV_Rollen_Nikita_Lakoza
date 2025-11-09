@@ -79,14 +79,26 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
       <div className="portfolio-carousel__viewport">
         <ul className="portfolio-carousel__track" id={trackId}>
           {normalizedItems.map((item) => {
+            const isMotionMedia = item.mediaType === 'video' || item.mediaType === 'iframe'
+            const itemClasses = ['portfolio-carousel__item']
             const cardClasses = ['portfolio-card']
+            const overlayClasses = ['portfolio-card__overlay']
 
             if (item.orientation === 'portrait') {
+              itemClasses.push('portfolio-carousel__item--portrait')
               cardClasses.push('portfolio-card--portrait')
             }
 
+            if (isMotionMedia) {
+              itemClasses.push('portfolio-carousel__item--motion')
+              cardClasses.push('portfolio-card--motion')
+              overlayClasses.push('portfolio-card__overlay--static')
+            } else {
+              cardClasses.push('portfolio-card--image')
+            }
+
             return (
-              <li key={item.title} className="portfolio-carousel__item">
+              <li key={item.title} className={itemClasses.join(' ')}>
                 <article className={cardClasses.join(' ')}>
                   <figure className="portfolio-card__media">
                     {item.mediaType === 'video' ? (
@@ -110,9 +122,20 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
                         />
                       </div>
                     ) : (
-                      <img className="portfolio-card__image" src={item.src} alt={item.alt ?? item.title} />
+                      <>
+                        <div
+                          className="portfolio-card__image-backdrop"
+                          aria-hidden="true"
+                          style={{ backgroundImage: `url(${item.src})` }}
+                        />
+                        <img
+                          className="portfolio-card__image"
+                          src={item.src}
+                          alt={item.alt ?? item.title}
+                        />
+                      </>
                     )}
-                    <figcaption className="portfolio-card__overlay">
+                    <figcaption className={overlayClasses.join(' ')}>
                       <h3 className="portfolio-card__title">{item.title}</h3>
                       <p className="portfolio-card__description">{item.description}</p>
                     </figcaption>
