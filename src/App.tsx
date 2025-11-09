@@ -92,48 +92,24 @@ function App() {
               <ul className="contact-list">
                 {contact.items.map((item) => {
                   const isEmail = item.href.startsWith('mailto:')
-                  const valueText = typeof item.value === 'string' ? item.value : ''
-                  const hasValue = valueText.trim().length > 0
-
-                  const cardClassName = [
-                    'contact-card',
-                    hasValue ? undefined : 'contact-card--title-only',
-                  ]
-                    .filter((className): className is string => Boolean(className))
-                    .join(' ')
+                  const linkText = item.value ?? item.label
 
                   return (
                     <li key={item.label} className="contact-list__item">
-                      <a
-                        className={cardClassName}
-                        href={item.href}
-                        target={isEmail ? undefined : '_blank'}
-                        rel={isEmail ? undefined : 'noopener noreferrer'}
-                      >
-                        <span className="contact-card__icon material-symbols-rounded" aria-hidden="true">
-                          {item.icon}
-                        </span>
-                        <div
-                          className={[
-                            'contact-card__content',
-                            hasValue ? undefined : 'contact-card__content--standalone',
-                          ]
-                            .filter((className): className is string => Boolean(className))
-                            .join(' ')}
+                      <span className="contact-list__icon material-symbols-rounded" aria-hidden="true">
+                        {item.icon}
+                      </span>
+                      <div className="contact-list__content">
+                        <span className="contact-list__label">{item.label}</span>
+                        <a
+                          className="contact-list__link"
+                          href={item.href}
+                          target={isEmail ? undefined : '_blank'}
+                          rel={isEmail ? undefined : 'noopener noreferrer'}
                         >
-                          {hasValue ? (
-                            <>
-                              <span className="contact-card__label">{item.label}</span>
-                              <span className="contact-card__value">{valueText}</span>
-                            </>
-                          ) : (
-                            <span className="contact-card__title">{item.label}</span>
-                          )}
-                        </div>
-                        <span className="contact-card__arrow material-symbols-rounded" aria-hidden="true">
-                          north_east
-                        </span>
-                      </a>
+                          {linkText}
+                        </a>
+                      </div>
                     </li>
                   )
                 })}

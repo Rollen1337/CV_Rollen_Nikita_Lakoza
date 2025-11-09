@@ -355,42 +355,23 @@
 }
 
 .contact-list__item {
-  list-style: none;
-}
-
-.contact-card {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   border-radius: 14px;
   border: 1px solid color-mix(in srgb, var(--border-strong) 60%, transparent);
   background: var(--surface);
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
-  color: var(--text-primary);
+  transition: border-color 0.2s ease;
 }
 
-.contact-card--title-only {
-  grid-template-columns: 1fr auto;
-  justify-items: center;
-  text-align: center;
-  gap: 0.65rem;
-}
-
-.contact-card--title-only .contact-card__icon {
-  display: none;
-}
-
-.contact-card:hover,
-.contact-card:focus-visible {
+.contact-list__item:hover,
+.contact-list__item:focus-within {
   border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-  background: color-mix(in srgb, var(--surface) 82%, var(--accent) 18%);
-  transform: translateY(-2px);
 }
 
-.contact-card__icon {
+.contact-list__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -398,17 +379,12 @@
   color: var(--accent);
 }
 
-.contact-card__content {
+.contact-list__content {
   display: grid;
   gap: 0.35rem;
 }
 
-.contact-card__content--standalone {
-  justify-items: center;
-  text-align: center;
-}
-
-.contact-card__label {
+.contact-list__label {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -416,31 +392,32 @@
   font-weight: 600;
 }
 
-.contact-card__title {
-  font-weight: 600;
-  font-size: clamp(1rem, 2.4vw, 1.25rem);
-  color: var(--text-primary);
-}
-
-.contact-card__value {
+.contact-list__link {
   font-weight: 600;
   font-size: 1rem;
   color: var(--text-primary);
-}
-
-.contact-card__arrow {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: color-mix(in srgb, var(--text-muted) 85%, transparent);
-  transition: color 0.2s ease, transform 0.2s ease;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
 }
 
-.contact-card:hover .contact-card__arrow,
-.contact-card:focus-visible .contact-card__arrow {
+.contact-list__link::after {
+  content: '\2197';
+  font-size: 0.85rem;
+  opacity: 0.65;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-list__link:hover,
+.contact-list__link:focus-visible {
   color: var(--accent);
+}
+
+.contact-list__link:hover::after,
+.contact-list__link:focus-visible::after {
   transform: translate(2px, -2px);
+  opacity: 1;
 }
 
 .section-title {

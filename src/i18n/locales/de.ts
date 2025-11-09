@@ -50,19 +50,19 @@ const de: Translation = {
         },
         {
           label: 'LinkedIn',
-          value: null,
+          value: 'Nikita Lakoza',
           href: 'https://www.linkedin.com/in/nikita-lakoza-98a339275',
           icon: 'handshake',
         },
         {
           label: 'Liquipedia (Counter-Strike)',
-          value: null,
+          value: 'Counter-Strike-Profil',
           href: 'https://liquipedia.net/counterstrike/Rollen',
           icon: 'travel_explore',
         },
         {
           label: 'Liquipedia (Dota 2)',
-          value: null,
+          value: 'Dota-2-Profil',
           href: 'https://liquipedia.net/dota2/Rollen',
           icon: 'travel_explore',
         },
