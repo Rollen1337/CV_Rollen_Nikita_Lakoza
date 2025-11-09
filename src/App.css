@@ -1103,7 +1103,8 @@
 }
 
 .portfolio-card__video,
-.portfolio-card__image {
+.portfolio-card__image,
+.portfolio-card__iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1112,9 +1113,31 @@
 
 .portfolio-card:hover .portfolio-card__video,
 .portfolio-card:hover .portfolio-card__image,
+.portfolio-card:hover .portfolio-card__iframe,
 .portfolio-card:focus-within .portfolio-card__video,
-.portfolio-card:focus-within .portfolio-card__image {
+.portfolio-card:focus-within .portfolio-card__image,
+.portfolio-card:focus-within .portfolio-card__iframe {
   transform: scale(1.04);
+}
+
+.portfolio-card__embed-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.portfolio-card__iframe {
+  max-width: min(100%, 360px);
+  max-height: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+  border-radius: calc(22px - 4px);
+  background: #000;
+}
+
+.portfolio-card--portrait .portfolio-card__media {
+  min-height: clamp(320px, 70vw, 540px);
 }
 
 .portfolio-card__overlay {
@@ -1202,14 +1225,24 @@
   max-width: min(100%, 120px);
   max-height: 64px;
   object-fit: contain;
-  filter: saturate(0.9);
+  filter: var(--logo-grid-image-filter, saturate(0.9));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo-grid__link:hover .logo-grid__image,
 .logo-grid__link:focus-visible .logo-grid__image {
   transform: scale(1.02);
-  filter: saturate(1.08);
+  filter: var(--logo-grid-image-filter-hover, saturate(1.08));
+}
+
+.logo-grid__image[data-logo='fissure'] {
+  --logo-grid-image-filter: saturate(0.9);
+  --logo-grid-image-filter-hover: saturate(1.08);
+}
+
+:root[data-theme='dark'] .logo-grid__image[data-logo='fissure'] {
+  --logo-grid-image-filter: invert(1) saturate(0.85);
+  --logo-grid-image-filter-hover: invert(1) saturate(1.05);
 }
 
 .links-list {

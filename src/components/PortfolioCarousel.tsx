@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 
-type PortfolioMediaType = 'image' | 'video'
+type PortfolioMediaType = 'image' | 'video' | 'iframe'
 
 type PortfolioItem = {
   title: string
@@ -9,6 +9,9 @@ type PortfolioItem = {
   src: string
   poster?: string
   alt?: string
+  orientation?: 'landscape' | 'portrait'
+  allow?: string
+  allowFullScreen?: boolean
 }
 
 interface PortfolioCarouselProps {
@@ -56,7 +59,7 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
 
   const normalizedItems: PortfolioItem[] = items.map((item) => ({
     ...item,
-    mediaType: item.mediaType === 'video' ? 'video' : 'image',
+    mediaType: item.mediaType === 'video' || item.mediaType === 'iframe' ? item.mediaType : 'image',
   }))
 
   const isExpandable = normalizedItems.length > 1
@@ -75,30 +78,49 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
     <div className={rootClasses.join(' ')}>
       <div className="portfolio-carousel__viewport">
         <ul className="portfolio-carousel__track" id={trackId}>
-          {normalizedItems.map((item) => (
-            <li key={item.title} className="portfolio-carousel__item">
-              <article className="portfolio-card">
-                <figure className="portfolio-card__media">
-                  {item.mediaType === 'video' ? (
-                    <video
-                      className="portfolio-card__video"
-                      controls
-                      preload="metadata"
-                      poster={item.poster}
-                    >
-                      <source src={item.src} />
-                    </video>
-                  ) : (
-                    <img className="portfolio-card__image" src={item.src} alt={item.alt ?? item.title} />
-                  )}
-                  <figcaption className="portfolio-card__overlay">
-                    <h3 className="portfolio-card__title">{item.title}</h3>
-                    <p className="portfolio-card__description">{item.description}</p>
-                  </figcaption>
-                </figure>
-              </article>
-            </li>
-          ))}
+          {normalizedItems.map((item) => {
+            const cardClasses = ['portfolio-card']
+
+            if (item.orientation === 'portrait') {
+              cardClasses.push('portfolio-card--portrait')
+            }
+
+            return (
+              <li key={item.title} className="portfolio-carousel__item">
+                <article className={cardClasses.join(' ')}>
+                  <figure className="portfolio-card__media">
+                    {item.mediaType === 'video' ? (
+                      <video
+                        className="portfolio-card__video"
+                        controls
+                        preload="metadata"
+                        poster={item.poster}
+                      >
+                        <source src={item.src} />
+                      </video>
+                    ) : item.mediaType === 'iframe' ? (
+                      <div className="portfolio-card__embed-wrapper">
+                        <iframe
+                          className="portfolio-card__iframe"
+                          src={item.src}
+                          title={item.title}
+                          allow={item.allow}
+                          allowFullScreen={item.allowFullScreen}
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <img className="portfolio-card__image" src={item.src} alt={item.alt ?? item.title} />
+                    )}
+                    <figcaption className="portfolio-card__overlay">
+                      <h3 className="portfolio-card__title">{item.title}</h3>
+                      <p className="portfolio-card__description">{item.description}</p>
+                    </figcaption>
+                  </figure>
+                </article>
+              </li>
+            )
+          })}
         </ul>
       </div>
       {canToggle ? (

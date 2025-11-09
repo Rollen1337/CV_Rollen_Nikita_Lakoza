@@ -230,6 +230,15 @@ const en = {
       },
       items: [
         {
+          title: 'FISSURE vertical highlight reel',
+          description: 'Vertical reel captured from the observer desk during a FISSURE show',
+          mediaType: 'iframe',
+          src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+          orientation: 'portrait',
+          allow: 'autoplay',
+          allowFullScreen: true,
+        },
+        {
           title: 'The team that lights up the stage',
           description: 'Best emotions after a tournament',
           mediaType: 'image',
@@ -260,6 +269,7 @@ const en = {
           href: 'https://fissure.pro',
           src: '/logos/fissure.svg',
           alt: 'FISSURE.pro logo',
+          id: 'fissure',
         },
       ],
     },

@@ -224,6 +224,15 @@ const ru: Translation = {
       },
       items: [
         {
+          title: 'Вертикальный хайлайт FISSURE',
+          description: 'Вертикальный ролик с рабочего места наблюдателя на турнире FISSURE',
+          mediaType: 'iframe',
+          src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+          orientation: 'portrait',
+          allow: 'autoplay',
+          allowFullScreen: true,
+        },
+        {
           title: 'Команда, которая зажигает сцену',
           description:
             'Лучшие эмоции после турнира',
@@ -255,6 +264,7 @@ const ru: Translation = {
           href: 'https://fissure.pro',
           src: '/logos/fissure.svg',
           alt: 'FISSURE.pro logo',
+          id: 'fissure',
         },
       ],
     },

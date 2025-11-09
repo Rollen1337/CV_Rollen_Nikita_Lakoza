@@ -231,6 +231,15 @@ const ro: Translation = {
       },
       items: [
         {
+          title: 'Reel vertical FISSURE',
+          description: 'Moment în format vertical din perspectiva observer-ului la un show FISSURE',
+          mediaType: 'iframe',
+          src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+          orientation: 'portrait',
+          allow: 'autoplay',
+          allowFullScreen: true,
+        },
+        {
           title: 'Echipa care aprinde scena',
           description: 'Cele mai bune emoții după un turneu',
           mediaType: 'image',
@@ -261,6 +270,7 @@ const ro: Translation = {
           href: 'https://fissure.pro',
           src: '/logos/fissure.svg',
           alt: 'Logo FISSURE.pro',
+          id: 'fissure',
         },
       ],
     },
