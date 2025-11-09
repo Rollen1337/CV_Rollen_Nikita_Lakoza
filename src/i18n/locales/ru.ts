@@ -12,6 +12,7 @@ const ru: Translation = {
     themeOptionSystem: 'Система',
     themeOptionLight: 'Светлая',
     themeOptionDark: 'Тёмная',
+    backToTop: 'Наверх',
     pdfControlsLabel: 'Управление PDF',
     headerControlsLabel: 'Элементы управления в шапке',
   },
@@ -255,25 +256,12 @@ const ru: Translation = {
       },
       items: [
         {
-          title: 'BetBoom Dacha Dubai 2024',
-          description: 'Вёл CS2 и Dota 2, готовил cinematic-пролёты и держал рекламные интеграции по расписанию',
+          title: 'Команда, которая зажигает сцену',
+          description:
+            'Люблю моменты, когда вся команда ловит кадр вместе — я делаю так, чтобы эти эмоции остались в эфире и у зрителей.',
           mediaType: 'image',
-          src: 'https://images.unsplash.com/photo-1526404079167-7a174eea6b52?auto=format&fit=crop&w=900&q=80',
-          alt: 'Сцена турнира с подсветкой',
-        },
-        {
-          title: 'Riyadh Masters 2024',
-          description: 'Обеспечивал чистые фиды для международного эфира и адаптировал показ под несколько языков',
-          mediaType: 'image',
-          src: 'https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=900&q=80',
-          alt: 'Команда на сцене турнира',
-        },
-        {
-          title: 'Elite League Season 2',
-          description: 'Организовал удалённый сетап с кастомными бинд-картами и моментальной доставкой статистики дизайнерам',
-          mediaType: 'image',
-          src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
-          alt: 'Пульт продакшена',
+          src: '/highlights/team.jpg',
+          alt: 'Команда наблюдателей празднует на сцене арены',
         },
       ],
     },

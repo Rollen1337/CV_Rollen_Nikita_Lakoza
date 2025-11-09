@@ -10,6 +10,14 @@ function App() {
   const { cv, layout } = translation
   const { metadata, contact, summary, experience, events, education, skills, tools, portfolio, logos, footer } = cv
 
+  const handleBackToTop = () => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">
@@ -255,11 +263,6 @@ function App() {
               {skills.groups.map((group) => (
                 <section key={group.title} aria-label={group.title} className="skills-grid__group">
                   <h3 className="skills-grid__title">{group.title}</h3>
-                  {group.description ? (
-                    <div className="skills-grid__callout">
-                      <p>{group.description}</p>
-                    </div>
-                  ) : null}
                   <ul className="skills-grid__list">
                     {group.items.map((skill) => (
                       <li key={skill}>{skill}</li>
@@ -307,19 +310,27 @@ function App() {
 
         <footer className="site-footer">
           <p>{footer.note}</p>
-          {footer.pdfLink && (
-            <a
-              className="site-footer__pdf-link"
-              href={footer.pdfLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <div className="site-footer__actions">
+            {footer.pdfLink && (
+              <a
+                className="site-footer__pdf-link site-footer__action"
+                href={footer.pdfLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="material-symbols-rounded" aria-hidden="true">
+                  picture_as_pdf
+                </span>
+                <span>{footer.pdfLink.label}</span>
+              </a>
+            )}
+            <button type="button" className="site-footer__back-to-top site-footer__action" onClick={handleBackToTop}>
               <span className="material-symbols-rounded" aria-hidden="true">
-                picture_as_pdf
+                north
               </span>
-              <span>{footer.pdfLink.label}</span>
-            </a>
-          )}
+              <span>{layout.backToTop}</span>
+            </button>
+          </div>
         </footer>
       </div>
     </div>
