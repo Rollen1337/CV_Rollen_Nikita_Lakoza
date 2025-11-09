@@ -272,19 +272,16 @@ function App() {
                                 rel="noopener noreferrer"
                               >
                                 <span className="tournament-link__name">{tournament.name}</span>
-                                <span className="tournament-link__cta">
-                                  {primaryLink.label ?? 'Open link'}
-                                  <span className="material-symbols-rounded" aria-hidden="true">
-                                    north_east
-                                  </span>
+                                <span className="tournament-link__arrow material-symbols-rounded" aria-hidden="true">
+                                  north_east
                                 </span>
                               </a>
                               {extraLinks.length ? (
-                                <div className="tournament-link__extras" aria-label={`${tournament.name} additional links`}>
+                                <div className="tournament-extras" aria-label={`${tournament.name} additional links`}>
                                   {extraLinks.map((link) => (
                                     <a
                                       key={`${tournament.name}-${link.href}`}
-                                      className="tournament-link__chip"
+                                      className="tournament-extra-link"
                                       href={link.href}
                                       target="_blank"
                                       rel="noopener noreferrer"
