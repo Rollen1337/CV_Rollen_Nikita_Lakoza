@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 
 type PortfolioMediaType = 'image' | 'video'
 
@@ -22,6 +22,7 @@ interface PortfolioCarouselProps {
 export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => {
   const [isMobile, setIsMobile] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
+  const trackId = useId()
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -68,18 +69,8 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
 
   return (
     <div className={rootClasses.join(' ')}>
-      {isMobile && toggle ? (
-        <button
-          type="button"
-          className="portfolio-carousel__toggle"
-          aria-expanded={isExpanded}
-          onClick={() => setIsExpanded((prev) => !prev)}
-        >
-          {isExpanded ? toggle.collapse : toggle.expand}
-        </button>
-      ) : null}
       <div className="portfolio-carousel__viewport">
-        <ul className="portfolio-carousel__track">
+        <ul className="portfolio-carousel__track" id={trackId}>
           {normalizedItems.map((item) => (
             <li key={item.title} className="portfolio-carousel__item">
               <article className="portfolio-card">
@@ -106,6 +97,22 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
           ))}
         </ul>
       </div>
+      {isMobile && toggle ? (
+        <button
+          type="button"
+          className="portfolio-carousel__toggle"
+          aria-expanded={isExpanded}
+          aria-controls={trackId}
+          onClick={() => setIsExpanded((prev) => !prev)}
+        >
+          <span className="portfolio-carousel__toggle-label">
+            {isExpanded ? toggle.collapse : toggle.expand}
+          </span>
+          <span className="portfolio-carousel__toggle-icon material-symbols-rounded" aria-hidden="true">
+            {isExpanded ? 'expand_less' : 'expand_more'}
+          </span>
+        </button>
+      ) : null}
     </div>
   )
 }
