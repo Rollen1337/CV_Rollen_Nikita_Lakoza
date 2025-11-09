@@ -249,10 +249,10 @@ const ru: Translation = {
       ],
     },
     portfolio: {
-      title: 'Ключевые трансляции',
+      title: 'Хайлайты',
       toggle: {
-        expand: 'Показать больше трансляций',
-        collapse: 'Скрыть трансляции',
+        expand: 'Показать больше хайлайтов',
+        collapse: 'Скрыть хайлайты',
       },
       items: [
         {

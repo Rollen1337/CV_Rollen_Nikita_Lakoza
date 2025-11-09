@@ -167,6 +167,11 @@ function App() {
               ))}
             </div>
           </Section>
+          {portfolio ? (
+            <Section id="portfolio" title={portfolio.title} icon="view_carousel">
+              <PortfolioCarousel items={portfolio.items} toggle={portfolio.toggle} />
+            </Section>
+          ) : null}
           {events ? (
             <Section id="events" title={events.title} icon="emoji_events">
               {events.intro ? <p className="section-intro">{events.intro}</p> : null}
@@ -238,11 +243,23 @@ function App() {
             </ul>
           </Section>
           <Section id="skills" title={skills.title} icon="psychology">
+            {skills.note ? (
+              <figure className="skills-lead">
+                <span className="skills-lead__icon material-symbols-rounded" aria-hidden="true">
+                  format_quote
+                </span>
+                <blockquote className="skills-lead__text">{skills.note}</blockquote>
+              </figure>
+            ) : null}
             <div className="skills-grid">
               {skills.groups.map((group) => (
                 <section key={group.title} aria-label={group.title} className="skills-grid__group">
                   <h3 className="skills-grid__title">{group.title}</h3>
-                  {group.description ? <p className="skills-grid__description">{group.description}</p> : null}
+                  {group.description ? (
+                    <div className="skills-grid__callout">
+                      <p>{group.description}</p>
+                    </div>
+                  ) : null}
                   <ul className="skills-grid__list">
                     {group.items.map((skill) => (
                       <li key={skill}>{skill}</li>
@@ -251,7 +268,6 @@ function App() {
                 </section>
               ))}
             </div>
-            {skills.note ? <p className="section-note">{skills.note}</p> : null}
           </Section>
           {tools ? (
             <Section id="tools" title={tools.title} icon="build">
@@ -267,11 +283,6 @@ function App() {
                   </section>
                 ))}
               </div>
-            </Section>
-          ) : null}
-          {portfolio ? (
-            <Section id="portfolio" title={portfolio.title} icon="view_carousel">
-              <PortfolioCarousel items={portfolio.items} toggle={portfolio.toggle} />
             </Section>
           ) : null}
           {logos ? (

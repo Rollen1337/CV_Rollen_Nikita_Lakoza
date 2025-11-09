@@ -246,10 +246,10 @@ const en = {
       ],
     },
     portfolio: {
-      title: 'Selected broadcasts',
+      title: 'Highlights',
       toggle: {
-        expand: 'Show more broadcasts',
-        collapse: 'Hide broadcasts',
+        expand: 'Show more highlights',
+        collapse: 'Hide highlights',
       },
       items: [
         {

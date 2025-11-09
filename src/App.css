@@ -224,9 +224,9 @@
   }
 }
 
-@media (min-width: 840px) {
+@media (min-width: 960px) {
   .page-hero {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr);
     align-items: start;
   }
 }
@@ -309,6 +309,8 @@
   border-radius: 18px;
   background: var(--surface-card);
   border: 1px solid color-mix(in srgb, var(--border-strong) 60%, transparent);
+  inline-size: 100%;
+  justify-self: stretch;
 }
 
 .contact-list {
@@ -642,7 +644,7 @@
 }
 
 .experience-card__achievements li + li {
-  border-top: 1px solid color-mix(in srgb, var(--border-strong) 50%, transparent);
+  margin-top: 0.2rem;
 }
 
 .experience-card__marker {
@@ -702,6 +704,8 @@
 .skills-grid {
   display: grid;
   gap: clamp(1rem, 2vw, 1.4rem);
+  align-content: start;
+  justify-items: stretch;
 }
 
 @media (min-width: 720px) {
@@ -714,7 +718,7 @@
   display: grid;
   gap: 0.8rem;
   padding: clamp(1rem, 2vw, 1.4rem);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--surface-layer);
   border: 1px solid color-mix(in srgb, var(--border-strong) 55%, transparent);
 }
@@ -727,10 +731,51 @@
   color: var(--text-muted);
 }
 
-.skills-grid__description {
+.skills-lead {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.6rem);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(0.75rem, 2vw, 1rem);
+  align-items: start;
+}
+
+.skills-lead__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.5rem, 6vw, 3rem);
+  height: clamp(2.5rem, 6vw, 3rem);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.skills-lead__text {
   margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.skills-grid__callout {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-strong) 50%, transparent);
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
+}
+
+.skills-grid__callout p {
+  margin: 0;
 }
 
 .skills-grid__list {
