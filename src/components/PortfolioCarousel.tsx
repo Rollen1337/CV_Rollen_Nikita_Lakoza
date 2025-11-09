@@ -2,6 +2,13 @@ import { useEffect, useId, useState } from 'react'
 
 type PortfolioMediaType = 'image' | 'video' | 'iframe'
 
+type PortfolioFallback = {
+  mediaType: 'iframe'
+  src: string
+  allow?: string
+  allowFullScreen?: boolean
+}
+
 type PortfolioItem = {
   title: string
   description: string
@@ -13,6 +20,7 @@ type PortfolioItem = {
   allow?: string
   allowFullScreen?: boolean
   sourceType?: string
+  fallback?: PortfolioFallback
 }
 
 interface PortfolioCarouselProps {
@@ -26,6 +34,7 @@ interface PortfolioCarouselProps {
 export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => {
   const [isMobile, setIsMobile] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
+  const [videoFallbacks, setVideoFallbacks] = useState<Record<string, boolean>>({})
   const trackId = useId()
 
   useEffect(() => {
@@ -81,6 +90,8 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
         <ul className="portfolio-carousel__track" id={trackId}>
           {normalizedItems.map((item) => {
             const isMotionMedia = item.mediaType === 'video' || item.mediaType === 'iframe'
+            const shouldUseFallback =
+              item.mediaType === 'video' && videoFallbacks[item.title] && item.fallback?.mediaType === 'iframe'
             const itemClasses = ['portfolio-carousel__item']
             const cardClasses = ['portfolio-card']
             const overlayClasses = ['portfolio-card__overlay']
@@ -102,14 +113,31 @@ export const PortfolioCarousel = ({ items, toggle }: PortfolioCarouselProps) => 
               <li key={item.title} className={itemClasses.join(' ')}>
                 <article className={cardClasses.join(' ')}>
                   <figure className="portfolio-card__media">
-                    {item.mediaType === 'video' ? (
+                    {item.mediaType === 'video' && shouldUseFallback && item.fallback ? (
+                      <div className="portfolio-card__embed-wrapper">
+                        <iframe
+                          className="portfolio-card__iframe"
+                          src={item.fallback.src}
+                          title={item.title}
+                          allow={item.fallback.allow}
+                          allowFullScreen={item.fallback.allowFullScreen}
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : item.mediaType === 'video' ? (
                       <video
                         className="portfolio-card__video"
                         controls
                         preload="metadata"
                         playsInline
-                        controlsList="nodownload noremoteplayback"
+                        controlsList="nodownload"
                         poster={item.poster}
+                        onError={() =>
+                          setVideoFallbacks((previous) => ({
+                            ...previous,
+                            [item.title]: true,
+                          }))
+                        }
                       >
                         <source src={item.src} type={item.sourceType} />
                       </video>

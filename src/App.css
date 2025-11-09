@@ -1329,7 +1329,7 @@
 
 @media (max-width: 640px) {
   .portfolio-carousel {
-    justify-items: stretch;
+    justify-items: center;
   }
 
   .portfolio-carousel__viewport {
@@ -1359,6 +1359,20 @@
 
   .portfolio-carousel--collapsed .portfolio-carousel__item:not(:first-child) {
     display: none;
+  }
+
+  .portfolio-card--image .portfolio-card__media {
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .portfolio-card--image .portfolio-card__image {
+    max-height: none;
+  }
+
+  .content-section[data-section='portfolio'] .content-section__body {
+    justify-items: center;
   }
 }
 
