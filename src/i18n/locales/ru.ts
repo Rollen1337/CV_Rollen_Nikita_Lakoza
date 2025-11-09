@@ -224,8 +224,8 @@ const ru: Translation = {
       },
       items: [
         {
-          title: 'Вертикальный хайлайт FISSURE',
-          description: 'Вертикальный ролик с рабочего места наблюдателя на турнире FISSURE',
+          title: 'Top observer mindgame move',
+          description: 'Did you saw this smoke fade?',
           mediaType: 'video',
           src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
           sourceType: 'video/mp4',

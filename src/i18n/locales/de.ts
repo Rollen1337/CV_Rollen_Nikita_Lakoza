@@ -231,8 +231,8 @@ const de: Translation = {
       },
       items: [
         {
-          title: 'Vertikales FISSURE-Highlight',
-          description: 'Vertikaler Reel vom Observer-Platz während einer FISSURE-Show',
+          title: 'Top observer mindgame move',
+          description: 'Did you saw this smoke fade?',
           mediaType: 'video',
           src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
           sourceType: 'video/mp4',

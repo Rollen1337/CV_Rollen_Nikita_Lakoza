@@ -230,8 +230,8 @@ const en = {
       },
       items: [
         {
-          title: 'FISSURE vertical highlight reel',
-          description: 'Vertical reel captured from the observer desk during a FISSURE show',
+          title: 'Top observer mindgame move',
+          description: 'Did you saw this smoke fade?',
           mediaType: 'video',
           src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
           sourceType: 'video/mp4',
