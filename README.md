@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# CV — Nikita "Rollen" Lakoza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, multilingual CV website showcasing the professional profile of Nikita "Rollen" Lakoza, a freelance Counter-Strike 2 and Dota 2 Observer/Esports professional.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Multi-language Support**: Available in English, Russian, German, and Romanian with easy language switching
+- **Theme Switching**: Light, dark, and system theme preferences with persistent storage
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Accessibility**: Built with ARIA labels, semantic HTML, and keyboard navigation support
+- **Portfolio Showcase**: Interactive carousel displaying professional highlights and achievements
+- **PDF Export**: Export functionality for generating downloadable CV documents (coming soon)
+- **Tournament Information**: Comprehensive display of tournaments and events with categorized listings
+- **Modern UI**: Clean, professional design with smooth animations and transitions
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **React 19** — UI library
+- **TypeScript** — Type safety
+- **Vite** — Build tool and dev server
+- **pnpm** — Package manager
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher)
+- pnpm 8.9.2+
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd CV_Rollen_Nikita_Lakoza
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+pnpm install
 ```
+
+3. Start the development server:
+```bash
+pnpm dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+- `pnpm dev` — Start development server with hot module replacement
+- `pnpm build` — Build the project for production (TypeScript compilation + Vite build)
+- `pnpm preview` — Preview the production build locally
+- `pnpm lint` — Run ESLint to check code quality
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── LanguageSwitcher.tsx
+│   ├── PortfolioCarousel.tsx
+│   ├── Section.tsx
+│   └── ThemeSwitcher.tsx
+├── data/               # Static data (tournaments, etc.)
+├── features/           # Feature-specific modules
+│   └── pdfExport/
+├── i18n/               # Internationalization
+│   ├── locales/        # Translation files (en, ru, de, ro)
+│   └── ...
+├── theme/              # Theme management
+└── App.tsx             # Main application component
+```
+
+## Building for Production
+
+To create an optimized production build:
+
+```bash
+pnpm build
+```
+
+The output will be in the `dist/` directory, ready for deployment to any static hosting service.
+
+## Deployment
+
+The built application can be deployed to any static hosting service such as:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+Simply point the deployment service to the `dist/` directory after running `pnpm build`.
+
+## License
+
+This project is private and proprietary.
