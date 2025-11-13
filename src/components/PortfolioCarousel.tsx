@@ -3,7 +3,7 @@ import { useEffect, useId, useState } from 'react'
 type PortfolioMediaType = 'image' | 'video' | 'iframe'
 
 type PortfolioFallback = {
-  mediaType: 'iframe'
+  mediaType: 'iframe' | string
   src: string
   allow?: string
   allowFullScreen?: boolean
@@ -16,7 +16,7 @@ type PortfolioItem = {
   src: string
   poster?: string
   alt?: string
-  orientation?: 'landscape' | 'portrait'
+  orientation?: 'landscape' | 'portrait' | string
   allow?: string
   allowFullScreen?: boolean
   sourceType?: string
