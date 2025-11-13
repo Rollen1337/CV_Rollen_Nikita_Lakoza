@@ -66,7 +66,7 @@ function App() {
             <div className="page-hero__profile">
               <figure className="page-hero__media">
                 <img
-                  src="/profile.jpg"
+                  src="./profile.jpg"
                   alt={metadata.name}
                 />
               </figure>

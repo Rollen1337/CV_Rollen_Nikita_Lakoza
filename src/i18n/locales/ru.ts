@@ -225,7 +225,7 @@ const ru: Translation = {
       items: [
         {
           title: 'Top observer mindgame move',
-          description: 'Did you saw this smoke fade?',
+          description: 'Did you see this smoke fade?',
           mediaType: 'video',
           src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
           sourceType: 'video/mp4',
@@ -242,7 +242,7 @@ const ru: Translation = {
           description:
             'Лучшие эмоции после турнира',
           mediaType: 'image',
-          src: '/highlights/team.jpg',
+          src: './highlights/team.jpg',
           alt: 'Команда наблюдателей празднует на сцене арены',
         },
       ],
@@ -252,22 +252,22 @@ const ru: Translation = {
       items: [
         {
           href: 'https://youtu.be/YVuiXKjDKwc?si=gtHzvoS68YClZD4D',
-          src: '/logos/fpg1.png',
+          src: './logos/fpg1.png',
           alt: 'Fissure Playground 1 logo',
         },
         {
           href: 'https://youtu.be/wGEbsuWClbA?si=y3RBo-w44JIxzYhm',
-          src: '/logos/fpg2.png',
+          src: './logos/fpg2.png',
           alt: 'Fissure Playground 2 logo',
         },
         {
           href: 'https://www.youtube.com/live/dOaZ4mjJmG4?si=3F_USY0zgp-JI9Xt',
-          src: '/logos/bbd2024.png',
+          src: './logos/bbd2024.png',
           alt: 'BetBoom Dacha Dubai 2024 logo',
         },
         {
           href: 'https://fissure.pro',
-          src: '/logos/fissure.svg',
+          src: './logos/fissure.svg',
           alt: 'FISSURE.pro logo',
           id: 'fissure',
         },
