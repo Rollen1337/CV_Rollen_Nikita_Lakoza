@@ -229,20 +229,20 @@ const en = {
         collapse: 'Hide highlights',
       },
       items: [
-        {
-          title: 'Top observer mindgame move',
-          description: 'Did you see this smoke fade?',
-          mediaType: 'video',
-          src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
-          sourceType: 'video/mp4',
-          orientation: 'portrait',
-          fallback: {
-            mediaType: 'iframe',
-            src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
-            allow: 'autoplay; fullscreen',
-            allowFullScreen: true,
-          },
-        },
+        // {
+        //   title: 'Top observer mindgame move',
+        //   description: 'Did you see this smoke fade?',
+        //   mediaType: 'video',
+        //   src: 'https://drive.usercontent.google.com/download?id=10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO&export=download',
+        //   sourceType: 'video/mp4',
+        //   orientation: 'portrait',
+        //   fallback: {
+        //     mediaType: 'iframe',
+        //     src: 'https://drive.google.com/file/d/10SNqs5bLyPQQGlBeYmuoPrwlIA0r7OfO/preview',
+        //     allow: 'autoplay; fullscreen',
+        //     allowFullScreen: true,
+        //   },
+        // },
         {
           title: 'The team that lights up the stage',
           description: 'Best emotions after a tournament',
